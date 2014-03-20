@@ -1,3 +1,41 @@
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesClass{Conf/Conf}
+
+%===============================================================================
+% Options
+%===============================================================================
+\LoadClass[a4paper, 12pt, notitlepage, openany, oneside]{book}
+\RequirePackage{kvoptions}
+\RequirePackage{kvoptions-patch}
+
+\SetupKeyvalOptions{
+	family=ThesisLibrary,
+	prefix=ThesisLibrary@
+}
+
+\DeclareStringOption[000000]{brand}
+
+\ProcessKeyvalOptions*
+
+%===============================================================================
+% Meta-Definitions
+%===============================================================================
+\def\subject#1{\gdef\@subject{#1}}
+\def\@subject{\@latex@error{No \noexpand\subject given}\@ehc}
+
+\def\keywords#1{\gdef\@keywords{#1}}
+\def\@keywords{\@latex@error{No \noexpand\keywords given}\@ehc}
+
+\def\meta{%
+	\makeatletter%
+	\hypersetup{%
+		pdftitle			= {\@title},%
+		pdfsubject			= {\@subject},%
+		pdfauthor			= {\@author},%
+		pdfkeywords			= {\@keywords}%
+	}%
+	\makeatother}
+
 %===============================================================================
 % Packages
 %===============================================================================
@@ -30,16 +68,16 @@
 \usepackage{array} % Better tabulars
 \usepackage{chngcntr} % Continuous Counters
 
-\input{Source/Font}
-\input{Source/Language}
-\input{Source/Colors}
-\input{Source/Hyperref}
-\input{Source/Layout}
-\input{Source/HeaderFooter}
-\input{Source/TikZ}
-\input{Source/BibTeX}
-\input{Source/LoLFix}
-\input{Source/Listings}
-\input{Source/ToC}
-\input{Source/Sections}
-\input{Source/Footnotes}
+\input{Conf/Font}
+\input{Conf/Language}
+\input{Conf/Colors}
+\input{Conf/Hyperref}
+\input{Conf/Layout}
+\input{Conf/HeaderFooter}
+\input{Conf/TikZ}
+\input{Conf/BibTeX}
+\input{Conf/LoLFix}
+\input{Conf/Listings}
+\input{Conf/ToC}
+\input{Conf/Sections}
+\input{Conf/Footnotes}
