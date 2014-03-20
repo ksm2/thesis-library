@@ -1,0 +1,21 @@
+%===============================================================================
+% Layout
+%===============================================================================
+\urlstyle{rm}
+\linespread{1.15}
+\geometry{a4paper}
+\geometry{margin=25mm, left=35mm, bottom=20mm}
+\geometry{footnotesep=5mm}
+\geometry{head=5mm}
+\geometry{headsep=5mm}
+\geometry{bindingoffset=0mm}
+\renewcommand\UrlFont{}
+
+\makeatletter
+\let\@@h@r@e@f@@=\href
+\def\href#1#2{%
+	{\color{leuchtrot}\uline{\@@h@r@e@f@@{#1}{#2}}}}
+\makeatother
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{5mm}
