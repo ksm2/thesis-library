@@ -14,6 +14,7 @@
 }
 
 \DeclareStringOption[000000]{brand}
+\DeclareStringOption[german]{language}
 
 \ProcessKeyvalOptions*
 
