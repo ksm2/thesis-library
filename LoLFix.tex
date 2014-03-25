@@ -7,6 +7,10 @@
   \newlistof{listings}{lol}{\lstlistlistingname}
 \endgroup
 \let\l@lstlisting\l@listings
+\let\list@of@listings\listoflistings
+\renewcommand{\listoflistings}{%
+	\list@of@listings
+	\addcontentsline{toc}{chapter}{\lstlistlistingname}}
 \AtBeginDocument{\addtocontents{lol}{\protect\addvspace{10\p@}}}
 \makeatother
-\renewcommand{\lstlistoflistings}{\listoflistings}
+\renewcommand{\lstlistoflistings}{\@latex@error{Please use \noexpand\listoflistings instead}\@ehc}
