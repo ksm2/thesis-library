@@ -1,8 +1,22 @@
 %===============================================================================
 % Table of Contents
 %===============================================================================
-\renewcommand{\lstlistingname}{Programmausdruck}
-\renewcommand{\lstlistlistingname}{Programmausdrucksverzeichnis}
+\makeatletter
+\def\lstlistingname@german{Programmausdruck}
+\def\lstlistlistingname@german{Programmausdrucksverzeichnis}
+\def\lstlistingname@french{Listing}
+\def\lstlistlistingname@french{Table des listings}
+\def\lstlistingname@spanish{Listing}
+\def\lstlistlistingname@spanish{Índice de listings}
+\def\lstlistingname@polish{Listing}
+\def\lstlistlistingname@polish{Spis listings}
+\@ifundefined{lstlistingname@\languagename}{\@latex@error{lstlistingname@\languagename}}{%
+	\renewcommand{\lstlistingname}{%
+		\csname lstlistingname@\languagename\endcsname}}%
+\@ifundefined{lstlistlistingname@\languagename}{}{%
+	\renewcommand{\lstlistlistingname}{%
+		\csname lstlistlistingname@\languagename\endcsname}}%
+\makeatother
 \renewcommand{\cftdotsep}{\cftnodots}
 \renewcommand{\cftchapfont}{\bfseries}
 \renewcommand{\cftfigpresnum}{Abb. }
