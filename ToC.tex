@@ -1,6 +1,8 @@
 %===============================================================================
 % Table of Contents
 %===============================================================================
+
+% List of Listings translations
 \makeatletter
 \def\lstlistingname@german{Programmausdruck}
 \def\lstlistlistingname@german{Programmausdrucksverzeichnis}
@@ -17,14 +19,20 @@
 	\renewcommand{\lstlistlistingname}{%
 		\csname lstlistlistingname@\languagename\endcsname}}%
 \makeatother
+
+% Formatting
+\renewcommand{\cftchapfont}{\nopagebreak\bfseries}
+
+% Character settings
 \renewcommand{\cftdotsep}{\cftnodots}
-\renewcommand{\cftchapfont}{\bfseries}
 \renewcommand{\cftfigpresnum}{Abb. }
 \renewcommand{\cfttabpresnum}{Tab. }
 \renewcommand{\cftlistingspresnum}{Prog. }
 \renewcommand{\cftfigaftersnum}{:}
 \renewcommand{\cfttabaftersnum}{:}
 \renewcommand{\cftlistingsaftersnum}{:}
+
+% Lengths
 \setlength{\cftfignumwidth}{2cm}
 \setlength{\cfttabnumwidth}{2cm}
 \setlength{\cftlistingsnumwidth}{2cm}
