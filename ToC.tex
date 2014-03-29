@@ -12,10 +12,12 @@
 \def\lstlistlistingname@spanish{Índice de listings}
 \def\lstlistingname@polish{Listing}
 \def\lstlistlistingname@polish{Spis listings}
-\@ifundefined{lstlistingname@\languagename}{\@latex@error{lstlistingname@\languagename}}{%
+
+\@ifundefined{lstlistingname@\languagename}{\relax}{%
 	\renewcommand{\lstlistingname}{%
 		\csname lstlistingname@\languagename\endcsname}}%
-\@ifundefined{lstlistlistingname@\languagename}{}{%
+		
+\@ifundefined{lstlistlistingname@\languagename}{\relax}{%
 	\renewcommand{\lstlistlistingname}{%
 		\csname lstlistlistingname@\languagename\endcsname}}%
 \makeatother
