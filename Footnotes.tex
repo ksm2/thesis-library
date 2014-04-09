@@ -12,18 +12,23 @@
 }
 	
 \def\footcite{%
-   \@ifnextchar[%
-     {\footcite@i}
-     {\footcite@i[Vgl.]}%
+	\@ifnextchar[%
+		{\footcite@i}
+		{\footcite@i[]}%
 }
 \def\footcite@i[#1]{%
-   \@ifnextchar[%
-     {\footcite@ii{#1}}
-     {\footcite@ii{#1}[]}%
+	\ifx&#1&%
+		\def\@checkmine{#1}%
+	\else%
+		\def\@checkmine{#1.}%
+	\fi%
+	\@ifnextchar[%
+     {\footcite@ii{\@checkmine}}
+     {\footcite@ii{\@checkmine}[Vgl.]}%
 }
 \def\footcite@ii#1[#2]#3{%
 	\footnote{%
-		#1 \textsc{\citeauthor{#3}}:~%
+		#2 \textsc{\citeauthor{#3}}:~%
 		\textit{\usebibentry{#3}{title}.}\space%
 		\@ifundefined{reuse@#3@publisher}{}{%
 			\@ifundefined{reuse@#3@address}{}{%
@@ -35,7 +40,7 @@
 		\@ifundefined{reuse@#3@url}{}{%
 			– URL \url{\usebibentry{#3}{url}}, Abruf am \usebibentry{#3}{urldate}.
 		}%
-		#2%
+		#1%
 	}}
 \makeatother
 \renewcommand{\thefootnote}{\arabic{footnote}}
