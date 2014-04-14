@@ -70,13 +70,22 @@
 \renewcommand{\cftlistingsaftersnum}{:}
 
 % Lengths
-\setlength{\cftfignumwidth}{2cm}
-\setlength{\cfttabnumwidth}{2cm}
-\setlength{\cftlistingsnumwidth}{2cm}
-\setlength{\cftfigindent}{0cm}
-\setlength{\cfttabindent}{0cm}
-\setlength{\cftbeforelistingsskip}{-2mm}
-\setlength{\cftlistingsindent}{0cm}
+\def\cftnumwidth{2cm}
+\def\cftindent{0cm}
+\def\cftbeforeskip{0cm}
+
+\setlength{\cftfignumwidth}{\cftnumwidth}
+\setlength{\cfttabnumwidth}{\cftnumwidth}
+\setlength{\cftlistingsnumwidth}{\cftnumwidth}
+
+\setlength{\cftfigindent}{\cftindent}
+\setlength{\cfttabindent}{\cftindent}
+\setlength{\cftlistingsindent}{\cftindent}
+
+\setlength{\cftbeforelistingsskip}{\cftbeforeskip}
+\setlength{\cftbeforefigskip}{\cftbeforeskip}
+\setlength{\cftbeforetabskip}{\cftbeforeskip}
+
 \setlength{\cftbeforechapskip}{2.5mm}
 \setlength{\cftbeforesecskip}{0.0mm}
 \setlength{\cftbeforesubsecskip}{0.0mm}
