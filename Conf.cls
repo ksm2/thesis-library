@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{Conf/Conf}
+\ProvidesClass{Conf}
 
 %===============================================================================
 % Options
@@ -27,15 +27,42 @@
 \def\keywords#1{\gdef\@keywords{#1}}
 \def\@keywords{\@latex@error{No \noexpand\keywords given}\@ehc}
 
-\def\meta{%
-	\makeatletter%
+\def\mail#1{\gdef\@mail{#1}}
+\def\@mail{\@latex@error{No \noexpand\mail given}\@ehc}
+
+\def\matriculationNumber#1{\gdef\@matriculationNumber{#1}}
+\def\@matriculationNumber{\@latex@error{No \noexpand\matriculationNumber given}\@ehc}
+
+\def\studies#1{\gdef\@studies{#1}}
+\def\@studies{\@latex@error{No \noexpand\studies given}\@ehc}
+
+\def\firstExaminerName#1{\gdef\@firstExaminerName{#1}}
+\def\@firstExaminerName{\@latex@error{No \noexpand\firstExaminerName given}\@ehc}
+
+\def\firstExaminerInstitute#1{\gdef\@firstExaminerInstitute{#1}}
+\def\@firstExaminerInstitute{\@latex@error{No \noexpand\firstExaminerInstitute given}\@ehc}
+
+\def\firstExaminerUniversity#1{\gdef\@firstExaminerUniversity{#1}}
+\def\@firstExaminerUniversity{\@latex@error{No \noexpand\firstExaminerUniversity given}\@ehc}
+
+\def\secondExaminerName#1{\gdef\@secondExaminerName{#1}}
+\def\@secondExaminerName{\@latex@error{No \noexpand\secondExaminerName given}\@ehc}
+
+\def\secondExaminerInstitute#1{\gdef\@secondExaminerInstitute{#1}}
+\def\@secondExaminerInstitute{\@latex@error{No \noexpand\secondExaminerInstitute given}\@ehc}
+
+\def\secondExaminerUniversity#1{\gdef\@secondExaminerUniversity{#1}}
+\def\@secondExaminerUniversity{\@latex@error{No \noexpand\secondExaminerUniversity given}\@ehc}
+
+% Write Meta Information to PDF
+\AtBeginDocument{%
 	\hypersetup{%
 		pdftitle			= {\@title},%
 		pdfsubject			= {\@subject},%
 		pdfauthor			= {\@author},%
 		pdfkeywords			= {\@keywords}%
-	}%
-	\makeatother}
+	} %
+}
 
 %===============================================================================
 % Packages
@@ -51,7 +78,7 @@
 \usepackage{xcolor} % For coloring texts
 \usepackage{tikz} % The TikZ vector graphic library
 \usepackage{fancyhdr} % Fancy headings
-\usepackage{natbib} % Literature
+\usepackage[longnamesfirst]{natbib} % Literature
 \usepackage{keyval} % For key-value-bib-entries
 \usepackage[normalem]{ulem} % Better underlining
 \usepackage{usebib} % Citations
@@ -68,6 +95,8 @@
 \usepackage{comment} % Comment blocks
 \usepackage{array} % Better tabulars
 \usepackage{chngcntr} % Continuous Counters
+\usepackage{longtable} % Better tables
+\usepackage{booktabs} % Rules in tables
 
 \input{Conf/Font}
 \input{Conf/Language}
@@ -82,3 +111,4 @@
 \input{Conf/ToC}
 \input{Conf/Sections}
 \input{Conf/Footnotes}
+\RequirePackage{Conf/translation}

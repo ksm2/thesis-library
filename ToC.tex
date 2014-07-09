@@ -2,64 +2,6 @@
 % Table of Contents
 %===============================================================================
 
-% List of Listings translations
-\makeatletter
-	% English
-	\def\loaname{List of Abbreviations}
-	\def\lstlistingname{Listing}
-	\def\lstlistlistingname{List of Listings}
-	\def\bibname{Bibliography}
-	\def\cftfigpresnum{fig. }
-	\def\cfttabpresnum{tab. }
-	\def\cftlistingspresnum{list. }
-	% German
-	\def\lstlistingname@german{Programmausdruck}
-	\def\lstlistlistingname@german{Programmausdrucksverzeichnis}
-	\def\loaname@german{Abkürzungsverzeichnis}
-	\def\bibname@german{Literaturverzeichnis}
-	\def\cftfigpresnum@german{Abb. }
-	\def\cfttabpresnum@german{Tab. }
-	\def\cftlistingspresnum@german{Prog. }
-	% French
-	\def\lstlistingname@french{Listing}
-	\def\lstlistlistingname@french{Table des listings}
-	% Spanish
-	\def\lstlistingname@spanish{Listing}
-	\def\lstlistlistingname@spanish{Índice de listings}
-	% Polish
-	\def\lstlistingname@polish{Listing}
-	\def\lstlistlistingname@polish{Spis listings}
-	
-	% Set params
-	\@ifundefined{lstlistingname@\languagename}{\relax}{%
-		\renewcommand{\lstlistingname}{%
-			\csname lstlistingname@\languagename\endcsname}}%
-			
-	\@ifundefined{lstlistlistingname@\languagename}{\relax}{%
-		\renewcommand{\lstlistlistingname}{%
-			\csname lstlistlistingname@\languagename\endcsname}}%
-			
-	\@ifundefined{loaname@\languagename}{\relax}{%
-		\renewcommand{\loaname}{%
-			\csname loaname@\languagename\endcsname}}%
-			
-	\@ifundefined{bibname@\languagename}{\relax}{%
-		\renewcommand{\bibname}{%
-			\csname bibname@\languagename\endcsname}}%
-			
-	\@ifundefined{cftfigpresnum@\languagename}{\relax}{%
-		\renewcommand{\cftfigpresnum}{%
-			\csname cftfigpresnum@\languagename\endcsname}}%
-			
-	\@ifundefined{cfttabpresnum@\languagename}{\relax}{%
-		\renewcommand{\cfttabpresnum}{%
-			\csname cfttabpresnum@\languagename\endcsname}}%
-			
-	\@ifundefined{cftlistingspresnum@\languagename}{\relax}{%
-		\renewcommand{\cftlistingspresnum}{%
-			\csname cftlistingspresnum@\languagename\endcsname}}%
-\makeatother
-
 % Formatting
 \renewcommand{\cftchapfont}{\nopagebreak\bfseries}
 

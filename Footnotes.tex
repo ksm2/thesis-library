@@ -38,7 +38,12 @@
 		}%
 		\citeyear{#3}.
 		\@ifundefined{reuse@#3@url}{}{%
-			– URL \url{\usebibentry{#3}{url}}, Abruf am \usebibentry{#3}{urldate}.
+			– URL \url{\usebibentry{#3}{url}}, Abruf am \usebibentry{#3}{urldate}%
+		\ifx&#1&%
+			.\space%
+		\else%
+			,\space%
+		\fi%
 		}%
 		#1%
 	}}

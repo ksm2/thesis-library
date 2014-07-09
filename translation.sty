@@ -1,0 +1,58 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{translation}[2013/01/13 Internationalization]
+% List of Listings translations
+
+% Register a Language key.
+%
+% #1 the key name.
+% #2 the default value.
+\def\RegisterLangKey#1#2{%
+	\typeout{\languagename}%
+	\expandafter\xdef\csname #1\endcsname{#2}%
+	\@ifundefined{#1@\languagename}{\relax}{%
+		\expandafter\xdef\csname #1\endcsname{%
+			\csname #1@\languagename\endcsname}}%
+}
+
+\def\TranslateLangKey#1#2#3{%
+    \expandafter\xdef\csname #1@#2\endcsname{#3}%
+}
+
+% German
+\TranslateLangKey{lstlistingname}{german}{Programmausdruck}
+\TranslateLangKey{lstlistlistingname}{german}{Programmausdrucksverzeichnis}
+\TranslateLangKey{loaname}{german}{Abkürzungsverzeichnis}
+\TranslateLangKey{bibname}{german}{Literaturverzeichnis}
+\TranslateLangKey{cftfigpresnum}{german}{Abb. }
+\TranslateLangKey{cfttabpresnum}{german}{Tab. }
+\TranslateLangKey{cftlistingspresnum}{german}{Prog. }
+\TranslateLangKey{firstexaminername}{german}{Erstprüfer}
+\TranslateLangKey{secondexaminername}{german}{Zweitprüfer}
+\TranslateLangKey{submittedon}{german}{vorgelegt am}
+\TranslateLangKey{submittedby}{german}{vorgelegt von}
+\TranslateLangKey{matriculationnumber}{german}{Matrikelnummer}
+
+% French
+\TranslateLangKey{lstlistingname}{french}{Listing}
+\TranslateLangKey{lstlistlistingname}{french}{Table des listings}
+
+% Spanish
+\TranslateLangKey{lstlistingname}{spanish}{Listing}
+\TranslateLangKey{lstlistlistingname}{spanish}{Índice de listings}
+
+% Polish
+\TranslateLangKey{lstlistingname}{polish}{Listing}
+\TranslateLangKey{lstlistlistingname}{polish}{Spis listings}
+
+\RegisterLangKey{loaname}{List of Abbreviations}
+\RegisterLangKey{lstlistingname}{Listing}
+\RegisterLangKey{lstlistlistingname}{List of Listings}
+\RegisterLangKey{bibname}{Bibliography}
+\RegisterLangKey{cftfigpresnum}{fig. }
+\RegisterLangKey{cfttabpresnum}{tab. }
+\RegisterLangKey{cftlistingspresnum}{list. }
+\RegisterLangKey{firstexaminername}{First Examiner}
+\RegisterLangKey{secondexaminername}{Second Examiner}
+\RegisterLangKey{submittedon}{submitted on}
+\RegisterLangKey{submittedby}{submitted by}
+\RegisterLangKey{matriculationnumber}{Matriculation number}
