@@ -1,22 +1,4 @@
-\NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesPackage{translation}[2013/01/13 Internationalization]
 % List of Listings translations
-
-% Register a Language key.
-%
-% #1 the key name.
-% #2 the default value.
-\def\RegisterLangKey#1#2{%
-	\typeout{\languagename}%
-	\expandafter\xdef\csname #1\endcsname{#2}%
-	\@ifundefined{#1@\languagename}{\relax}{%
-		\expandafter\xdef\csname #1\endcsname{%
-			\csname #1@\languagename\endcsname}}%
-}
-
-\def\TranslateLangKey#1#2#3{%
-    \expandafter\xdef\csname #1@#2\endcsname{#3}%
-}
 
 % German
 \TranslateLangKey{lstlistingname}{german}{Programmausdruck}
