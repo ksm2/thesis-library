@@ -2,6 +2,31 @@
 % Table of Contents
 %===============================================================================
 
+\makeatletter
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+	\if@mainmatter
+	\refstepcounter{chapter}%
+	\typeout{\@chapapp\space\thechapter.}%
+	\addcontentsline{toc}{chapter}%
+	{\protect\numberline{\thechapter}#1}%
+	\else
+	\addcontentsline{toc}{chapter}{#1}%
+	\fi
+	\else
+	\addcontentsline{toc}{chapter}{#1}%
+	\fi
+	\chaptermark{#1}%
+	%                    \addtocontents{lof}{\protect\addvspace{10\p@}}% NEW
+	%                    \addtocontents{lot}{\protect\addvspace{10\p@}}% NEW
+	\if@twocolumn
+	\@topnewpage[\@makechapterhead{#2}]%
+	\else
+	\@makechapterhead{#2}%
+	\@afterheading
+	\fi}
+
+\makeatother
+
 % Formatting
 \renewcommand{\cftchapfont}{\nopagebreak\bfseries}
 
@@ -28,7 +53,7 @@
 \setlength{\cftbeforefigskip}{\cftbeforeskip}
 \setlength{\cftbeforetabskip}{\cftbeforeskip}
 
-\setlength{\cftbeforechapskip}{2.5mm}
+\setlength{\cftbeforechapskip}{2.0mm}
 \setlength{\cftbeforesecskip}{0.0mm}
 \setlength{\cftbeforesubsecskip}{0.0mm}
 \setlength{\cftbeforesubsubsecskip}{0.0mm}
