@@ -4,7 +4,12 @@
 \makeatletter
 \fancypagestyle{plain}{%
 	\fancyhf{}
-	\fancyhead[L]{\footnotesize\sffamily\@subject}
+	\fancyhead[L]{\footnotesize\sffamily\nouppercase{\leftmark}}
 	\fancyhead[R]{\footnotesize\sffamily \pagename~\thepage}}
 \pagestyle{plain}
 \makeatother
+
+\newcommand{\nnchapter}[1]{
+	\phantomsection
+	\addcontentsline{toc}{chapter}{#1}\renewcommand{\leftmark}{#1}\chapter*{#1}
+}

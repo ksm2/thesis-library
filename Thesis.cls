@@ -66,6 +66,7 @@
 \RequirePackage{amsmath, amsfonts, amssymb} % Math packages
 \RequirePackage{graphicx} % For Graphics
 \RequirePackage{xcolor} % For coloring texts
+\RequirePackage{xspace} % Define commands that appear not to eat spaces
 \RequirePackage{tikz} % The TikZ vector graphic library
 \RequirePackage{fancyhdr} % Fancy headings
 \RequirePackage[longnamesfirst]{natbib} % Literature
@@ -89,6 +90,10 @@
 \RequirePackage{epstopdf} % So we can use EPS
 \RequirePackage{currfile} % Current file handling
 \RequirePackage[printonlyused]{acronym} % Using acronyms
+\RequirePackage{chngcntr} % Changes counters
+\RequirePackage{enumitem} % Lists on steroids
+\RequirePackage{imakeidx} % Index manipulation
+%\RequirePackage[font={small,sf}]{caption}
 
 %===============================================================================
 % Macros
@@ -127,3 +132,4 @@
 \input{packages/Translation}
 \input{packages/Hyperref}
 \input{packages/TikZ}
+\input{packages/Lists}
